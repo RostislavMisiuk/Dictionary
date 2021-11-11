@@ -6,32 +6,28 @@ using System.Threading.Tasks;
 
 namespace EXAM_11._11
 {
-    class dictionary
+    class DictionaryDemo
     {
-        public string typeDictionary { get; set; }
-        public string word { get; set; }
-        public string wordTranslation { get; set; }
-
-        public dictionary()
-        {
-            typeDictionary = "unknown";
-            word = "unknown";
-            wordTranslation = "unknown";
-        }
-        public dictionary(string typeDictionary,string word,string wordTranslation) 
-        {
-            this.typeDictionary=typeDictionary;
-            this.word = word;
-            this.wordTranslation = wordTranslation;
-        
-        }
         static void Main(string[] args)
         {
-            int choice = 0;
+            MyDict dict = new MyDict("Rus-Eng");
+            dict.append("Трава", "Расслабляющая классная тема");
+            dict.append("Трава", "Зеленая на земле штука");
+            dict.append("Машина", "Крутой транспорт для хачей");
+            foreach(string word in dict.search("машина"))
+            {
+                Console.WriteLine($"{word}");
+            }
+            Console.WriteLine($"{dict.search("ТРАВА")}");
+
+
+            /*
+
+            int choice = 0; 
             Console.WriteLine("Добро пожаловать в программу <Словарь>");
             Console.WriteLine("Какое действие хотите сделать? : Добавить слово - 1; Удалить слово - 2");
             choice = int.Parse(Console.ReadLine());
-            dictionary typesDictionary = new dictionary();
+            DictionaryDemo typesDictionary = new DictionaryDemo();
             var dictionaryList = new List<string>();
             switch (choice)
             {
@@ -70,6 +66,8 @@ namespace EXAM_11._11
             {
                 Console.WriteLine(item);
             }
+            */
         }
+
     }
 }
