@@ -56,5 +56,25 @@ namespace EXAM_11._11
             }
             return res;
         }
+
+        public void replace(string oldKey, string newKey)
+        {
+            newKey = newKey.ToLower();
+            oldKey = oldKey.ToLower();
+            if (data.ContainsKey(oldKey))
+            {
+                List<string> newValues = new List<string>(data[oldKey]);
+                data.Add(newKey, newValues);
+                data.Remove(oldKey);
+
+            }
+           
+        }
+        public override string ToString()
+        {
+            string text = $"type :{this.type}\n";
+            return text;
+        }
+
     }
 }
