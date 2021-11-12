@@ -57,7 +57,7 @@ namespace EXAM_11._11
             return res;
         }
 
-        public void replace(string oldKey, string newKey)
+        public void replace_key(string oldKey, string newKey)
         {
             newKey = newKey.ToLower();
             oldKey = oldKey.ToLower();
@@ -70,9 +70,34 @@ namespace EXAM_11._11
             }
            
         }
+
+        public void replace_value(string key, string value, int index)
+        {
+            key = key.ToLower();
+            if (data.ContainsKey(key))
+            {
+                if (data[key].Count() > index && index >= 0)
+                {
+                    data[key][index] = value;
+                }
+            }
+        }
+
         public override string ToString()
         {
-            string text = $"type :{this.type}\n";
+            string text = $"Тип словаря:{this.type}";
+            foreach (string key in data.Keys)
+            {
+                string newKey = key;
+                newKey.Remove(0, 1);
+                newKey += key.ToUpper()[0];
+                text += $"\n{newKey}:";
+                int index = 1;
+                foreach(string value in data[key])
+                {
+                    text += $" {index++}.{value};";
+                }
+            }
             return text;
         }
 

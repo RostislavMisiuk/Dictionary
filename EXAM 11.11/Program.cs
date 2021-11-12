@@ -22,8 +22,10 @@ namespace EXAM_11._11
             {
                 Console.WriteLine(($"{word}"));
             }
-                dict.replace("машина", "автобус");
+                dict.replace_key("машина", "автобус");
             Console.WriteLine(dict);
+            Console.WriteLine(dict);
+
 
 
 
