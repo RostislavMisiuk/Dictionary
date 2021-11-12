@@ -89,8 +89,8 @@ namespace EXAM_11._11
             foreach (string key in data.Keys)
             {
                 string newKey = key;
-                newKey.Remove(0, 1);
-                newKey += key.ToUpper()[0];
+                newKey = newKey.Remove(0, 1);
+                newKey = key.ToUpper()[0] + newKey;
                 text += $"\n{newKey}:";
                 int index = 1;
                 foreach(string value in data[key])
