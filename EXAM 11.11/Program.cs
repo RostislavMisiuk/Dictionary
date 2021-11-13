@@ -12,11 +12,12 @@ namespace EXAM_11._11
         static void Main(string[] args)
         {
             MyDict dict = new MyDict();
+                Console.WriteLine("\t\t\tДоброго времени суток,вы запустили программу <Словарь>");
+                Console.WriteLine("\tКакое действие хотите выполнить? : Создать словарь - 1; Добавить слово - 2; Найти слово - 3; Заменить перевод - 4; Заменить значение - 5; Вывести словарь - 6; Выход из программы - 0;");
             int enter=-1;
             while (enter != 0)
             {
-                Console.WriteLine("\t\t\tДоброго времени суток,вы запустили программу <Словарь>");
-                Console.WriteLine("\tКакое действие хотите выполнить? : Создать словарь - 1; Добавить слово - 2; Найти слово - 3; Заменить перевод - 4; Удалить слово - 5; Вывести словарь - 6; Выход из программы - 0;");
+                Console.WriteLine("Продолжим? : Создать словарь - 1; Добавить слово - 2; Найти слово - 3; Заменить перевод - 4; Заменить значение - 5; Вывести словарь - 6; Выход из программы - 0;");
                 enter = int.Parse(Console.ReadLine());
                 switch (enter)
                 {
@@ -33,9 +34,12 @@ namespace EXAM_11._11
                         dict.append(key, value);
                         break;
                     case 3:
-                        Console.Write("Введите слово которое хотели бы найти :");
+                        Console.Write("Введите слово которого хотели бы найти перевод / значение :");
                         string keySearch = Console.ReadLine();
-                        dict.search(keySearch);
+                        foreach (string word in dict.search(keySearch))
+                        {
+                            Console.WriteLine($"Ваш перевод / значение слова : {word}");
+                        }
                         break;
                     case 4:
                         Console.WriteLine("Введите какое слово вы бы хотели заменить :");
@@ -54,7 +58,7 @@ namespace EXAM_11._11
                         dict.replace_value(keyReplace, keyValue, index);
                         break;
                     case 6:
-                        dict.ToString();
+                        Console.WriteLine(dict.ToString());
                         break;
                 }
             }
