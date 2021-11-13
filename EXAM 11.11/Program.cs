@@ -12,17 +12,19 @@ namespace EXAM_11._11
         static void Main(string[] args)
         {
             MyDict dict = new MyDict();
-            int enter;
-            Console.WriteLine("\t\t\tДоброго времени суток,вы запустили программу <Словарь>");
-            Console.WriteLine("\tКакое действие хотите выполнить? : Создать словарь - 1; Добавить слово - 2; Найти слово - 3; Заменить перевод - 4; Удалить слово - 5; Вывести словарь - 6; Выход из программы - 0;");
-            enter = int.Parse(Console.ReadLine());
+            int enter=-1;
+            while (enter != 0)
+            {
+                Console.WriteLine("\t\t\tДоброго времени суток,вы запустили программу <Словарь>");
+                Console.WriteLine("\tКакое действие хотите выполнить? : Создать словарь - 1; Добавить слово - 2; Найти слово - 3; Заменить перевод - 4; Удалить слово - 5; Вывести словарь - 6; Выход из программы - 0;");
+                enter = int.Parse(Console.ReadLine());
                 switch (enter)
                 {
                     case 1:
                         Console.WriteLine("Введите тип вашего словаря : ");
                         dict.type = Console.ReadLine();
                         break;
-                    
+
                     case 2:
                         Console.WriteLine("Введите ваше слово : ");
                         string key = Console.ReadLine();
@@ -55,6 +57,7 @@ namespace EXAM_11._11
                         dict.ToString();
                         break;
                 }
+            }
         }
     }
 }
