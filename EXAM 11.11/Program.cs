@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +14,10 @@ namespace EXAM_11._11
         {
             MyDict dict = new MyDict();
                 Console.WriteLine("\t\t\tДоброго времени суток,вы запустили программу <Словарь>");
-                Console.WriteLine("\tКакое действие хотите выполнить? : Создать словарь - 1; Добавить слово - 2; Найти слово - 3; Заменить перевод - 4; Заменить значение - 5; Вывести словарь - 6; Выход из программы - 0;");
             int enter=-1;
             while (enter != 0)
             {
-                Console.WriteLine("Продолжим? : Создать словарь - 1; Добавить слово - 2; Найти слово - 3; Заменить перевод - 4; Заменить значение - 5; Вывести словарь - 6; Выход из программы - 0;");
+                Console.WriteLine("\tКакое действие хотите выполнить? : Создать словарь - 1; Добавить слово - 2; Найти слово - 3; Заменить перевод - 4; Заменить значение - 5; Вывести словарь - 6;");
                 enter = int.Parse(Console.ReadLine());
                 switch (enter)
                 {
@@ -59,6 +59,9 @@ namespace EXAM_11._11
                         break;
                     case 6:
                         Console.WriteLine(dict.ToString());
+                        break;
+                    case 7:
+
                         break;
                 }
             }
