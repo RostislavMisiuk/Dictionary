@@ -116,7 +116,7 @@ namespace EXAM_11._11
         {
             foreach (string key in data.Keys)
             {
-                values = key;
+                values += String.Join(", ", key) + Environment.NewLine;
             }
           
             string save = @"E:\text.txt";
@@ -128,21 +128,21 @@ namespace EXAM_11._11
                 Console.WriteLine("Слово записано в файл");
             }
         }
-        //public void savevalues(string input)
-        //{
-        //    foreach (string values in data.Values)
-        //    {
-        //        input = values;
-        //    }
-        //    string save = @"E:\text.txt";
-        //    MyDict dictsave = new MyDict(save);
-        //    using (FileStream fstream = new FileStream($"{save}", FileMode.OpenOrCreate))
-        //    {
-        //        byte[] array = System.Text.Encoding.Default.GetBytes(input);
-        //        fstream.Write(array, 0, array.Length);
-        //        Console.WriteLine("Значение записано в файл");
-        //    }
-        //}
+        public void savevalues(string input)
+        {
+            foreach (var row in data.Values)
+            {
+                input += String.Join(", ", row) + Environment.NewLine;
+            }
+            string save = @"E:\text.txt";
+            MyDict dictsave = new MyDict(save);
+            using (FileStream fstream = new FileStream($"{save}", FileMode.OpenOrCreate))
+            {
+                byte[] array = System.Text.Encoding.Default.GetBytes(input);
+                fstream.Write(array, 0, array.Length);
+                Console.WriteLine("Значение записано в файл");
+            }
+        }
         public void readingfile()
         {
             string save = @"E:\rus-eng.txt";

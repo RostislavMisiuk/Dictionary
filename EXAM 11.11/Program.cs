@@ -34,6 +34,7 @@ namespace EXAM_11._11
                         Console.WriteLine("Введите перевод вашего слова :");
                         string value = Console.ReadLine();
                         dict.append(key, value);
+                        dict.savevalues(value);
                         break;
                     case 3:
                         Console.Write("Введите слово которого хотели бы найти перевод / значение :");
