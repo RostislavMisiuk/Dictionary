@@ -63,6 +63,7 @@ namespace EXAM_11._11
                         Console.WriteLine(dict.ToString());
                         break;
                     case 7:
+                        dict.readingfile();
                         break;
                 }
             }

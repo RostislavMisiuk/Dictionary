@@ -109,7 +109,7 @@ namespace EXAM_11._11
             {
                 byte[] array = System.Text.Encoding.Default.GetBytes(text);
                 fstream.Write(array, 0, array.Length);
-                Console.WriteLine("Название записано в файл");
+                Console.WriteLine("Тип словаря записан в файл");
             }
         }
         public void savekey(string values)
@@ -124,13 +124,13 @@ namespace EXAM_11._11
             using (FileStream fstream = new FileStream($"{save}", FileMode.OpenOrCreate))
             {
                 byte[] array = System.Text.Encoding.Default.GetBytes(values);
-                fstream.Write(array, 0, array.Length);
+                fstream.Write(array, 1, array.Length);
                 Console.WriteLine("Слово записано в файл");
             }
         }
         //public void savevalues(string input)
         //{
-        //    foreach (string value in data.Values())
+        //    foreach (string value in data.Values)
         //    {
         //        input = value;
         //    }
@@ -139,10 +139,20 @@ namespace EXAM_11._11
         //    using (FileStream fstream = new FileStream($"{save}text.txt", FileMode.OpenOrCreate))
         //    {
         //        byte[] array = System.Text.Encoding.Default.GetBytes(input);
-        //        fstream.Write(array, 0, array.Length);
+        //        fstream.Write(array, 1, array.Length);
         //        Console.WriteLine("Значение записано в файл");
         //    }
         //}
-        
+        public void readingfile()
+        {
+            string save = @"E:\rus-eng.txt";
+            using (FileStream fstream = File.OpenRead($"{save}"))
+            {
+                byte[] array = new byte[fstream.Length];
+                fstream.Read(array, 0, array.Length);
+                string textFromFile = System.Text.Encoding.Default.GetString(array);
+                Console.WriteLine($"Тип вашего словаря: {textFromFile}");
+            }
+        }
     }
 }
