@@ -24,11 +24,13 @@ namespace EXAM_11._11
                     case 1:
                         Console.WriteLine("Введите тип вашего словаря : ");
                         dict.type = Console.ReadLine();
+                        dict.savetype();
                         break;
 
                     case 2:
                         Console.WriteLine("Введите ваше слово : ");
                         string key = Console.ReadLine();
+                        dict.savekey(key);
                         Console.WriteLine("Введите перевод вашего слова :");
                         string value = Console.ReadLine();
                         dict.append(key, value);
@@ -61,7 +63,6 @@ namespace EXAM_11._11
                         Console.WriteLine(dict.ToString());
                         break;
                     case 7:
-
                         break;
                 }
             }

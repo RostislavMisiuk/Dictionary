@@ -101,5 +101,48 @@ namespace EXAM_11._11
             }
             return text;
         }
+        public void savetype()
+        {
+            string text = $"Тип словаря:{this.type}";
+            string save = @"E:\text.txt";
+            using (FileStream fstream = new FileStream($"{save}", FileMode.OpenOrCreate))
+            {
+                byte[] array = System.Text.Encoding.Default.GetBytes(text);
+                fstream.Write(array, 0, array.Length);
+                Console.WriteLine("Название записано в файл");
+            }
+        }
+        public void savekey(string values)
+        {
+            foreach (string key in data.Keys)
+            {
+                values = key;
+            }
+          
+            string save = @"E:\text.txt";
+            MyDict dictsave = new MyDict(save);
+            using (FileStream fstream = new FileStream($"{save}", FileMode.OpenOrCreate))
+            {
+                byte[] array = System.Text.Encoding.Default.GetBytes(values);
+                fstream.Write(array, 0, array.Length);
+                Console.WriteLine("Слово записано в файл");
+            }
+        }
+        //public void savevalues(string input)
+        //{
+        //    foreach (string value in data.Values())
+        //    {
+        //        input = value;
+        //    }
+        //    string save = @"E:\text.txt";
+        //    MyDict dictsave = new MyDict(save);
+        //    using (FileStream fstream = new FileStream($"{save}text.txt", FileMode.OpenOrCreate))
+        //    {
+        //        byte[] array = System.Text.Encoding.Default.GetBytes(input);
+        //        fstream.Write(array, 0, array.Length);
+        //        Console.WriteLine("Значение записано в файл");
+        //    }
+        //}
+        
     }
 }
