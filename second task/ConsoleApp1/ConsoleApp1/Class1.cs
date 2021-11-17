@@ -28,14 +28,16 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             int enter = -1;
-            while (enter != 0) {
+            while (enter != 0)
+            {
                 Dictionary<string, string> information = new Dictionary<string, string>();
-            Quiz quiz = new Quiz();
-            Console.WriteLine("Введите логин : ");
-            quiz.login = Console.ReadLine();
-            Console.WriteLine("Введите пароль :");
-            quiz.password = Console.ReadLine();
-            information.Add(quiz.login, quiz.password);
+                Quiz quiz = new Quiz();
+                Console.WriteLine("Введите логин : ");
+                quiz.login = Console.ReadLine();
+                Console.WriteLine("Введите пароль :");
+                quiz.password = Console.ReadLine();
+                information.Add(quiz.login, quiz.password);
+            }
         }
     }
 }
