@@ -27,7 +27,9 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            Dictionary<string, string> information = new Dictionary<string, string>();
+            int enter = -1;
+            while (enter != 0) {
+                Dictionary<string, string> information = new Dictionary<string, string>();
             Quiz quiz = new Quiz();
             Console.WriteLine("Введите логин : ");
             quiz.login = Console.ReadLine();
